@@ -1,10 +1,12 @@
 #!/bin/bash
 
+rm -rf Forge Proxy Server ServerPocketEdition Plugins
+
 mkdir Server
 mkdir Forge
 mkdir Proxy
 mkdir ServerPocketEdition
-mkdir plugins
+mkdir Plugins
 
 apt install maven default-jdk default-jre git -y
 
