@@ -6,6 +6,11 @@ mkdir Proxy
 mkdir ServerPocketEdition
 mkdir plugins
 
+apt install maven default-jdk default-jre git -y
+
+echo "starting compiler"
+screenfetch
+
 cd Server
 git clone https://github.com/GlowstoneMC/Glowstone.git
 git clone https://github.com/PaperMC/Paper.git
@@ -30,4 +35,4 @@ git clone https://github.com/iTXTech/Genisys.git
 git clone https://github.com/PrismarineMC/Prismarine.git
 cd ..
 cd Plugins
-https://github.com/essentials/Essentials.git
+git clone https://github.com/essentials/Essentials.git
