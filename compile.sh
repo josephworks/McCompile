@@ -12,9 +12,11 @@ git clone https://github.com/PaperMC/Paper.git
 git clone https://github.com/minecraftserverorg/cuberite.git
 git clone https://github.com/Diorite/Diorite.git
 git clone https://github.com/LanternPowered/LanternServer.git
+git clone https://github.com/SpongePowered/SpongeVanilla.git
 cd ..
 cd Forge
 git clone https://github.com/CyberdyneCC/Thermos.git
+git clone https://github.com/SpongePowered/SpongeForge.git
 cd ..
 cd Proxy
 git clone https://github.com/SpigotMC/BungeeCord.git
