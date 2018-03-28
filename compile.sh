@@ -52,10 +52,10 @@ echo 'Finished grabbing source files!'
 echo 'Compiling Servers...'
 cd Server
 cd Glowstone
-mvn clean install
+mvn -B package
 cd ..
 cd Paper
-mvn clean install
+mvn clean install && ./scripts/paperclip.sh "$basedir"
 cd ..
 cd Diorite
 mvn clean install
@@ -69,6 +69,7 @@ cd ..
 cd ..
 
 echo 'Compiling Proxies...'
+cd Proxy
 cd BungeeCord
 mvn clean install
 cd ..
