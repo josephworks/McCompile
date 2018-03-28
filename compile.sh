@@ -81,6 +81,7 @@ cd ..
 cd ..
 
 echo 'Compiling Forge Servers...'
+cd Forge
 cd SpongeForge
 gradle build
 cd ..
