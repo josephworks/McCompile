@@ -1,18 +1,25 @@
 #!/bin/bash
 
+echo 'Removing old SRC Code...'
 rm -rf Forge Proxy Server ServerPocketEdition Plugins
+clear
 
+echo 'Creating Directories...'
 mkdir Server
 mkdir Forge
 mkdir Proxy
 mkdir ServerPocketEdition
 mkdir Plugins
+clear
 
+echo 'Installing Dependencies...'
 apt install maven default-jdk default-jre git -y
+clear
 
-echo "starting compiler"
+echo 'Starting...'
 screenfetch
 
+echo 'Getting SRC Files...'
 cd Server
 git clone https://github.com/GlowstoneMC/Glowstone.git
 git clone https://github.com/PaperMC/Paper.git
@@ -38,3 +45,4 @@ git clone https://github.com/PrismarineMC/Prismarine.git
 cd ..
 cd Plugins
 git clone https://github.com/essentials/Essentials.git
+clear
