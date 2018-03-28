@@ -13,7 +13,7 @@ mkdir Plugins
 clear
 
 echo 'Installing Dependencies...'
-apt install maven default-jdk default-jre git -y
+apt install maven default-jdk default-jre git wget unzip gradle -y
 clear
 
 echo 'Starting...'
@@ -45,4 +45,62 @@ git clone https://github.com/PrismarineMC/Prismarine.git
 cd ..
 cd Plugins
 git clone https://github.com/essentials/Essentials.git
+cd ..
 clear
+echo 'Finished grabbing source files!'
+
+echo 'Compiling Servers...'
+cd Server
+cd Glowstone
+mvn clean install
+cd ..
+cd Paper
+mvn clean install
+cd ..
+cd Diorite
+mvn clean install
+cd ..
+cd LanternServer
+gradle build
+cd ..
+cd SpongeVanilla
+gradle build
+cd ..
+cd ..
+
+echo 'Compiling Proxies...'
+cd BungeeCord
+mvn clean install
+cd ..
+cd Travertine
+mvn clean install
+cd ..
+cd Waterfall
+mvn clean install
+cd ..
+cd ..
+
+echo 'Compiling Forge Servers...'
+cd SpongeForge
+gradle build
+cd ..
+cd Thermos
+gradle build
+cd ..
+cd ..
+
+echo 'Compiling Pocket Edition Servers...'
+cd ServerPocketEdition
+cd Nukkit
+mvn clean install
+cd ..
+cd ..
+
+echo 'Compiling Plugins...'
+cd Plugins
+cd Essentials
+mvn clean install
+cd ..
+cd ..
+
+echo 'Compiling finished!'
