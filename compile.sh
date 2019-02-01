@@ -41,7 +41,6 @@ cd ServerPocketEdition
 git clone https://github.com/Nukkit/Nukkit.git
 git clone https://github.com/pmmp/PocketMine-MP.git
 git clone https://github.com/iTXTech/Genisys.git
-git clone https://github.com/PrismarineMC/Prismarine.git
 cd ..
 cd Plugins
 git clone https://github.com/essentials/Essentials.git
