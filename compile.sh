@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'Removing old SRC Code...'
-rm -rf Forge Proxy Server ServerPocketEdition Plugins
+rm -rf Forge Proxy Server ServerPocketEdition
 clear
 
 echo 'Creating Directories...'
@@ -9,7 +9,6 @@ mkdir Server
 mkdir Forge
 mkdir Proxy
 mkdir ServerPocketEdition
-mkdir Plugins
 clear
 
 echo 'Installing Dependencies...'
@@ -41,9 +40,6 @@ cd ServerPocketEdition
 git clone https://github.com/Nukkit/Nukkit.git
 git clone https://github.com/pmmp/PocketMine-MP.git
 git clone https://github.com/iTXTech/Genisys.git
-cd ..
-cd Plugins
-git clone https://github.com/essentials/Essentials.git
 cd ..
 clear
 echo 'Finished grabbing source files!'
@@ -93,13 +89,6 @@ cd ..
 echo 'Compiling Pocket Edition Servers...'
 cd ServerPocketEdition
 cd Nukkit
-mvn clean install
-cd ..
-cd ..
-
-echo 'Compiling Plugins...'
-cd Plugins
-cd Essentials
 mvn clean install
 cd ..
 cd ..
