@@ -16,7 +16,7 @@ apt install maven default-jdk default-jre git wget unzip gradle -y
 clear
 
 echo 'Starting...'
-screenfetch
+neofetch
 
 echo 'Getting SRC Files...'
 cd Server
