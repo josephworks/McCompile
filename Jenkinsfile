@@ -22,80 +22,62 @@ pipeline {
         }
         stage('Get') {
             steps {
-                sh 'cd Server
-git clone https://github.com/GlowstoneMC/Glowstone.git
-git clone https://github.com/PaperMC/Paper.git
-git clone https://github.com/minecraftserverorg/cuberite.git
-git clone https://github.com/Diorite/Diorite.git
-git clone https://github.com/LanternPowered/LanternServer.git
-git clone https://github.com/SpongePowered/SpongeVanilla.git
-cd ..
-cd Forge
-git clone https://github.com/CyberdyneCC/Thermos.git
-git clone https://github.com/SpongePowered/SpongeForge.git
-cd ..
-cd Proxy
-git clone https://github.com/SpigotMC/BungeeCord.git
-git clone https://github.com/WaterfallMC/Travertine.git
-git clone https://github.com/WaterfallMC/Waterfall.git
-cd ..
-cd ServerPocketEdition
-git clone https://github.com/Nukkit/Nukkit.git
-git clone https://github.com/pmmp/PocketMine-MP.git
-git clone https://github.com/iTXTech/Genisys.git
-cd ..'
+                sh 'cd Server'
+                sh 'git clone https://github.com/GlowstoneMC/Glowstone.git'
+                sh 'git clone https://github.com/PaperMC/Paper.git'
+                sh 'git clone https://github.com/minecraftserverorg/cuberite.git'
+                sh 'git clone https://github.com/Diorite/Diorite.git'
+                sh 'git clone https://github.com/LanternPowered/LanternServer.git'
+                sh 'git clone https://github.com/SpongePowered/SpongeVanilla.git'
+                sh 'cd ..'
+                sh 'cd Forge'
+                sh 'git clone https://github.com/CyberdyneCC/Thermos.git'
+                sh 'git clone https://github.com/SpongePowered/SpongeForge.git'
+                sh 'cd ..'
+                sh 'cd Proxy'
+                sh 'git clone https://github.com/SpigotMC/BungeeCord.git'
+                sh 'git clone https://github.com/WaterfallMC/Travertine.git'
+                sh 'git clone https://github.com/WaterfallMC/Waterfall.git'
+                sh 'cd ..'
+                sh 'cd ServerPocketEdition'
+                sh 'git clone https://github.com/Nukkit/Nukkit.git'
+                sh 'git clone https://github.com/pmmp/PocketMine-MP.git'
+                sh 'git clone https://github.com/iTXTech/Genisys.git'
+                sh 'cd ..'
             }
         }
         stage('Build') {
             steps {
-                sh 'echo 'Compiling Servers...'
-cd Server
-cd Glowstone
-mvn -B package
-cd ..
-cd Paper
-mvn clean install && ./scripts/paperclip.sh "$basedir"
-cd ..
-cd Diorite
-mvn clean install
-cd ..
-cd LanternServer
-gradle build
-cd ..
-cd SpongeVanilla
-gradle build
-cd ..
-cd ..
-
-echo 'Compiling Proxies...'
-cd Proxy
-cd BungeeCord
-mvn clean install
-cd ..
-cd Travertine
-mvn clean install
-cd ..
-cd Waterfall
-mvn clean install
-cd ..
-cd ..
-
-echo 'Compiling Forge Servers...'
-cd Forge
-cd SpongeForge
-gradle build
-cd ..
-cd Thermos
-gradle build
-cd ..
-cd ..
-
-echo 'Compiling Pocket Edition Servers...'
-cd ServerPocketEdition
-cd Nukkit
-mvn clean install
-cd ..
-cd ..'
+                sh 'echo 'Compiling Servers...''
+                sh 'cd Server/Glowstone'
+                sh 'mvn -B package'
+                sh 'cd .. && cd Paper'
+                sh 'mvn clean install && ./scripts/paperclip.sh "$basedir"'
+                sh 'cd .. && cd Diorite'
+                sh 'mvn clean install'
+                sh 'cd .. && cd LanternServer'
+                sh 'gradle build'
+                sh 'cd .. && cd SpongeVanilla'
+                sh 'gradle build'
+                sh 'cd .. && cd ..'
+                sh 'echo "Compiling Proxies..."'
+                sh 'cd Proxy && cd BungeeCord'
+                sh 'mvn clean install'
+                sh 'cd .. && cd Travertine'
+                sh 'mvn clean install'
+                sh 'cd .. && cd Waterfall'
+                sh 'mvn clean install'
+                sh 'cd .. && cd ..'
+                sh 'echo "Compiling Forge Servers..."'
+                sh 'cd Forge && cd SpongeForge'
+                sh 'gradle build'
+                sh 'cd .. && cd Thermos'
+                sh 'gradle build'
+                sh 'cd .. && cd ..'
+                sh 'echo "Compiling Pocket Edition Servers..."'
+                sh 'cd ServerPocketEdition && cd Nukkit'
+                sh 'mvn clean install'
+                sh 'cd .. && cd ..'
             }
         }
         stage('Artifact') {
