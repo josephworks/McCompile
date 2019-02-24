@@ -82,7 +82,8 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                sh 'echo Artifacts'
+                sh 'echo "Artifacts"'
+                sh 'echo "Comming Soon!!!"'
             }
         }
     }
