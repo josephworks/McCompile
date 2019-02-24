@@ -25,7 +25,7 @@ pipeline {
                 sh 'cd Server'
                 sh 'git clone https://github.com/GlowstoneMC/Glowstone.git'
                 sh 'git clone https://github.com/PaperMC/Paper.git'
-                sh 'git clone https://github.com/minecraftserverorg/cuberite.git'
+                sh 'git clone https://github.com/cuberite/cuberite.git'
                 sh 'git clone https://github.com/Diorite/Diorite.git'
                 sh 'git clone https://github.com/LanternPowered/LanternServer.git'
                 sh 'git clone https://github.com/SpongePowered/SpongeVanilla.git'
