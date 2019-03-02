@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo 'Compiling Servers...''
+                sh "echo 'Compiling Servers...'"
                 sh 'cd Server/Glowstone'
                 sh 'mvn -B package'
                 sh 'cd .. && cd Paper'
@@ -82,8 +82,8 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                sh 'echo "Artifacts"'
-                sh 'echo "Comming Soon!!!"'
+                sh "echo "Artifacts""
+                sh "echo "Comming Soon!!!""
             }
         }
     }
