@@ -50,7 +50,7 @@ cd Glowstone
 mvn -B package
 cd ..
 cd Paper
-mvn clean install && ./scripts/paperclip.sh "$basedir"
+bash ./paper jar
 cd ..
 cd Diorite
 mvn clean install
