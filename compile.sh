@@ -37,7 +37,7 @@ git clone https://github.com/WaterfallMC/Travertine.git
 git clone https://github.com/WaterfallMC/Waterfall.git
 cd ..
 cd ServerPocketEdition
-git clone https://github.com/Nukkit/Nukkit.git
+git clone https://github.com/CloudburstMC/Nukkit.git
 git clone https://github.com/pmmp/PocketMine-MP.git
 git clone https://github.com/iTXTech/Genisys.git
 cd ..
